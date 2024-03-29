@@ -28,8 +28,8 @@
     }
   },
   "files": [
-    "esm/**//*",
-    "web/**//*",
+    "esm/**/*",
+    "web/**/*",
     "index.d.ts",
     "node.d.ts",
     "index.node.js",
@@ -38,15 +38,16 @@
   "scripts": {
     "clean": "./scripts/clean.sh",
     "finish": "./scripts/finish.sh",
-    "build": "rollup --config rollup.config.js --bundleConfigAsCjs && yarn finish",
+    "build": "pnpm clean && rollup --config rollup.config.js --bundleConfigAsCjs && pnpm finish",
     "demo": "webpack serve --open --config webpack.demo.config.js",
     "docs": "webpack --config webpack.demo.publish.js --mode production",
     "test:ts": "tsc --noEmit",
-    "test:lint": "eslint src/**//* tests/*.ts demo/**//*.js --ext .ts,.js",
+    "test:lint": "eslint src/**/* tests/*.ts demo/**/*.js --ext .ts,.js",
     "test:unit": "jest --verbose",
-    "test:all": "yarn test:ts && yarn test:lint && yarn test:unit",
-    "prepare": "yarn build",
-    "prepublishOnly": "yarn test:all",
+    "test:all": "pnpm test:ts && pnpm test:lint && pnpm test:unit",
+    "preinstall": "npx -y only-allow pnpm",
+    "prepare": "pnpm build",
+    "prepublishOnly": "pnpm test:all",
     "version": "git add .",
     "postversion": "git push && git push --tags"
   },
