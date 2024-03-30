@@ -66,13 +66,13 @@ export const getPointFromIsometricPoint = (
     scale: number
 ): IsometricPoint => {
     return {
-        x: round(centerX + (point.r - point.l) * scale / HSQRT3, DECIMALS),
+        x: round(centerX + (point.r - point.l) * scale * HSQRT3, DECIMALS),
         y: round(centerY + ((point.r + point.l) / 2 - point.t) * scale, DECIMALS)
     };
 };
 
 export const getTopPlanePointFromCoordinates = (x: number, y: number): Omit<Position, 'top'> => {
-    const XHSQRT3 = x * HSQRT3;
+    const XHSQRT3 = x / HSQRT3;
     const right = (y * 2 + XHSQRT3) / 2;
     const left = right - XHSQRT3;
     return {
@@ -82,7 +82,7 @@ export const getTopPlanePointFromCoordinates = (x: number, y: number): Omit<Posi
 };
 
 export const getFrontPlanePointFromCoordinates = (x: number, y: number): Omit<Position, 'right'> => {
-    const left = - x * HSQRT3;
+    const left = - x / HSQRT3;
     const top = left / 2 - y;
     return {
         left,
@@ -91,7 +91,7 @@ export const getFrontPlanePointFromCoordinates = (x: number, y: number): Omit<Po
 };
 
 export const getSidePlanePointFromCoordinates = (x: number, y: number): Omit<Position, 'left'> => {
-    const right = x * HSQRT3;
+    const right = x / HSQRT3;
     const top = right / 2 - y;
     return {
         right,

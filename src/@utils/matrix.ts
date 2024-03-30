@@ -60,19 +60,19 @@ const rotateZ = (r: number): Matrix => {
 
 const topMatrix = multiplyMatrices(
     rotateX(Math.atan(0.5)),
-    rotateZ(-Math.PI / 4)
+    rotateZ(-ROT_45)
 );
 
 const frontMatrix = multiplyMatrices(
     rotateZ(-Math.atan(0.5) * 2),
     rotateX(Math.atan(0.5)),
-    rotateZ(Math.PI / 4)
+    rotateZ(ROT_45)
 );
 
 const sideMatrix = multiplyMatrices(
     rotateZ(Math.atan(0.5) * 2),
     rotateX(Math.atan(0.5)),
-    rotateZ(-Math.PI / 4)
+    rotateZ(-ROT_45)
 );
 
 const rotationToRotationMatrix = (view: IsometricPlaneView, rotation: Rotation): Matrix | null => {
