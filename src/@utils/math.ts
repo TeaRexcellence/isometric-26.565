@@ -66,7 +66,7 @@ export const getPointFromIsometricPoint = (
     scale: number
 ): IsometricPoint => {
     return {
-        x: round(centerX + (point.r - point.l) * scale * HSQRT3, DECIMALS),
+        x: round(centerX + (point.r - point.l) * scale / HSQRT3, DECIMALS),
         y: round(centerY + ((point.r + point.l) / 2 - point.t) * scale, DECIMALS)
     };
 };
