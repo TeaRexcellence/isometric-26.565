@@ -19,7 +19,7 @@ export enum SVG_PROPERTIES {
 
 export const DECIMALS = 6;
 export const SQRT3 = +(Math.sqrt(3).toFixed(DECIMALS));
-export const HSQRT3 = +(Math.sqrt(3) / 2).toFixed(DECIMALS);
+export const HSQRT3 = Math.atan(0.5);
 export const DEFAULT_WIDTH = 640;
 export const DEFAULT_HEIGHT = 480;
 
@@ -31,7 +31,7 @@ const CURVE = `${POINT}${SS}${POINT}`;
 export const COMMANDS_REGEXP = new RegExp(`(?:(M|L)${S}${POINT}${S}|(C)${S}${CURVE})${S}`, 'g');
 
 export const SCALE = Math.sqrt(3 / 2);
-export const ROT_60 = Math.PI / 3;
+export const ROT_60 = Math.atan(0.5) * 2;
 export const ROT_45 = Math.PI / 4;
 export const ROT_CMA = Math.atan(Math.SQRT2);
 
