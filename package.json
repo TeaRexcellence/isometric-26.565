@@ -36,7 +36,7 @@
     "index.js"
   ],
   "scripts": {
-    "clean": "node -e \"require('os').platform() === 'win32' ? require('child_process').execSync('clean.bat') : require('child_process').execSync('./clean.sh')\"",
+    "clean": "node -e \"console.log(process.cwd()); require('os').platform() === 'win32' ? require('child_process').execSync('clean.bat') : require('child_process').execSync('./clean.sh')\"",
     "finish": "node -e \"require('os').platform() === 'win32' ? require('child_process').execSync('finish.bat') : require('child_process').execSync('./finish.sh')\"",
     "build": "pnpm clean && rollup --config rollup.config.js --bundleConfigAsCjs && pnpm finish",
     "demo": "webpack serve --open --config webpack.demo.config.js",
