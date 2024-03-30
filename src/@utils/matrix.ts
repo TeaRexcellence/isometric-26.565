@@ -64,13 +64,13 @@ const topMatrix = multiplyMatrices(
 );
 
 const frontMatrix = multiplyMatrices(
-    rotateZ(-ROT_60),
+    rotateZ(-Math.atan(0.5) * 2),
     rotateX(Math.atan(0.5)),
     rotateZ(ROT_45)
 );
 
 const sideMatrix = multiplyMatrices(
-    rotateZ(ROT_60),
+    rotateZ(Math.atan(0.5) * 2),
     rotateX(Math.atan(0.5)),
     rotateZ(-ROT_45)
 );
