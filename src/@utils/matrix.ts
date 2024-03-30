@@ -59,20 +59,20 @@ const rotateZ = (r: number): Matrix => {
 };
 
 const topMatrix = multiplyMatrices(
-    rotateX(Math.atan(0.5)),
-    rotateZ(-ROT_45)
+    rotateX(Math.atan(1 / Math.sqrt(2))),
+    rotateZ(-Math.PI / 4)
 );
 
 const frontMatrix = multiplyMatrices(
-    rotateZ(-Math.atan(0.5) * 2),
-    rotateX(Math.atan(0.5)),
-    rotateZ(ROT_45)
+    rotateZ(-Math.PI / 3),
+    rotateX(Math.atan(1 / Math.sqrt(2))),
+    rotateZ(Math.PI / 4)
 );
 
 const sideMatrix = multiplyMatrices(
-    rotateZ(Math.atan(0.5) * 2),
-    rotateX(Math.atan(0.5)),
-    rotateZ(-ROT_45)
+    rotateZ(Math.PI / 3),
+    rotateX(Math.atan(1 / Math.sqrt(2))),
+    rotateZ(-Math.PI / 4)
 );
 
 const rotationToRotationMatrix = (view: IsometricPlaneView, rotation: Rotation): Matrix | null => {
