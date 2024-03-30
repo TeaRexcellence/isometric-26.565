@@ -1,22 +1,23 @@
 {
     "compilerOptions": {
-        "outDir": "./docs-dist/",
-        "module": "esnext",
-        "target": "es5",
-        "moduleResolution": "node",
-        "esModuleInterop": true,
-        "declaration": true,
-        "noImplicitAny": true,
-        "removeComments": true,
-        "baseUrl": "./src",
-        "paths": {
-            "@store": ["@store"],
-            "@types": ["@types"],
-            "@constants": ["@constants"],
-            "@utils/*": ["@utils/*"],
-            "@classes/*": ["@classes/*"]
-        }
+      "outDir": "./docs-dist/",
+      "module": "esnext",
+      "target": "es5",
+      "lib": ["es2015", "dom"],
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "declaration": true,
+      "noImplicitAny": true,
+      "removeComments": true,
+      "baseUrl": "./src",
+      "paths": {
+        "@store": ["@store"],
+        "@types": ["@types"],
+        "@constants": ["@constants"],
+        "@utils/*": ["@utils/*"],
+        "@classes/*": ["@classes/*"]
+      }
     },
     "include": ["src/**/*.ts"],
     "exclude": ["node_modules"]
-}
+  }
