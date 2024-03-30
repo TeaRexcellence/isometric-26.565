@@ -1,5 +1,5 @@
 {
-  "name": "@elchininet/isometric",
+  "name": "@elchininet/isometric-26.565",
   "version": "3.7.3",
   "description": "A JavaScript library written in TypeScript to create isometric projections using SVGs",
   "main": "index.js",
